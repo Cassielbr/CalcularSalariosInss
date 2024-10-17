@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular Salários"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:background="@drawable/edit_text_background"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Nome do Funcionário com ícone -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@drawable/edit_text_background"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:src="@drawable/name"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp" />
+
+        <EditText
+            android:id="@+id/etNome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Nome do Funcionário"
+            android:inputType="textPersonName"
+            android:importantForAccessibility="yes"
+            android:contentDescription="Campo para inserir o nome do funcionário"
+            android:background="@drawable/edit_text_background"
+            android:padding="8dp"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+    <!-- Salário Bruto com ícone -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:src="@drawable/money"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp" />
+
+        <EditText
+            android:id="@+id/etSalarioBruto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Salário Bruto"
+            android:inputType="numberDecimal"
+            android:importantForAccessibility="yes"
+            android:contentDescription="Campo para inserir o salário bruto"
+            android:background="@drawable/edit_text_background"
+            android:padding="8dp"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+    <!-- Sexo com ícone -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:src="@drawable/gender"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp" />
+
+        <RadioGroup
+            android:id="@+id/radioSexo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbMasculino"
+                android:layout_width="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:padding="8dp"
+                android:layout_height="wrap_content"
+                android:text="Masculino" />
+
+            <RadioButton
+                android:id="@+id/rbFeminino"
+                android:layout_width="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:padding="8dp"
+                android:layout_height="wrap_content"
+                android:text="Feminino" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <!-- Grupo de opções para filhos -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp">
+
+        <RadioGroup
+            android:id="@+id/radioFilhos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbTemFilhos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:padding="8dp"
+                android:text="Tenho filhos" />
+
+            <RadioButton
+                android:id="@+id/rbNaoTemFilhos"
+                android:layout_width="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:padding="8dp"
+                android:layout_height="wrap_content"
+                android:text="Não tenho filhos" />
+        </RadioGroup>
+
+        <!-- Número de Filhos (Aparece apenas se "Tenho filhos" for selecionado) -->
+        <EditText
+            android:id="@+id/etFilhos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:background="@drawable/edit_text_background"
+            android:hint="Número de Filhos"
+            android:inputType="number"
+            android:visibility="gone" />
+
+        <!-- Imagem condicional para filhos -->
+        <ImageView
+            android:id="@+id/icFilhos"
+            android:src="@drawable/baby"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+    <!-- Botão de Calcular -->
+    <Button
+        android:id="@+id/btnCalcular"
+        android:background="@drawable/button_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:layout_marginTop="20dp"
+        android:onClick="calcularSalario"/>
+
+    <!-- Exibição dos Resultados -->
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_background"
+        android:contentDescription="Exibe os resultados do cálculo"
+        android:importantForAccessibility="yes"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <!-- Botão de Limpar -->
+    <Button
+        android:id="@+id/btnLimpar"
+        android:background="@drawable/button_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Limpar"
+        android:layout_marginTop="10dp"
+        android:onClick="limparCampos" />
+
+</LinearLayout>
