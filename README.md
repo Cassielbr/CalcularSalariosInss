@@ -38,8 +38,8 @@ Siga os passos abaixo para rodar o projeto localmente:
 │   ├── src
 │   │   ├── main
 │   │   │   ├── java/br/ulbra/calcularsalariosinss
-│   │   │   │   ├── MainActivity.kt                   # Atividade principal com cálculo de salário
-│   │   │   │   ├── SalaryCalculator.kt                # Lógica para cálculo de salários e INSS
+│   │   │   │   ├── MainActivity.java                   # Atividade principal com cálculo de salário
+│   │   │   │   ├── SalaryCalculator.java               # Lógica para cálculo de salários e INSS
 │   │   │   ├── res
 │   │   │   │   ├── drawable
 │   │   │   │   │   ├── calculator.png                 # Ícone do aplicativo
